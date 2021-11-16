@@ -46,8 +46,8 @@ def upload():
         file_path = os.path.join('uploads', filename)
         file.save(file_path)
 
-        model=load_model("CHESTS.h5")
-        img = image.load_img(file_path, target_size=(224, 224))
+        model=load_model("CHEST.h5")
+        img = image.load_img(file_path, target_size=(32,32))
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         #with graph.as_default():
